@@ -7,6 +7,7 @@ namespace SpecResults.WebApp
 	{
 		public string Title { get; set; }
 		public string StepDetailsTemplateFile { get; set; }
+        public string ScenarioDetailsTemplateFile { get; set; }
 		public string CssFile { get; set; }
 		public string DashboardTextFile { get; set; }
 		public CultureInfo Culture { get; set; }

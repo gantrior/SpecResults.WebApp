@@ -18,7 +18,8 @@ namespace SpecResults.WebApp.Showcase
 			var webApp = new WebAppReporter();
 			webApp.Settings.Title = "WebAppReporter Showcase";
 			webApp.Settings.StepDetailsTemplateFile = GetAbsolutePath(@"templates\step-details.tpl.html");
-			webApp.Settings.CssFile = GetAbsolutePath(@"templates\styles.css");
+            webApp.Settings.ScenarioDetailsTemplateFile = GetAbsolutePath(@"templates\scenario-details.tpl.html");
+            webApp.Settings.CssFile = GetAbsolutePath(@"templates\styles.css");
 			webApp.Settings.DashboardTextFile = GetAbsolutePath(@"templates\dashboard-text.md");
 
 			Reporters.Add(webApp);

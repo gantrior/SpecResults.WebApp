@@ -152,7 +152,16 @@ namespace SpecResults.WebApp
 					);
 			}
 
-			return contents;
+            // Inject custom scenario-details template
+            if (!string.IsNullOrEmpty(Settings.ScenarioDetailsTemplateFile))
+            {
+                var pattern = "(?:<!-- scenario-detail-marker: begin -->)(.*?)(?:<!-- scenario-detail-marker: end -->)";
+                var replacement = File.ReadAllText(Settings.ScenarioDetailsTemplateFile);
+                replacement = Regex.Replace(replacement, "(\r|\n)", "\\n");
+                contents = Regex.Replace(contents, pattern, replacement);
+            }
+
+            return contents;
 		}
 	}
 }

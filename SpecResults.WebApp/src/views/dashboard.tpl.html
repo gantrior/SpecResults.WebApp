@@ -38,12 +38,16 @@
 
 				<h3>Scenarios</h3>
 				<div class="list-group">
-					<a ng-repeat="scenario in feature.scenarios|orderBy:'title'" class="list-group-item" href="#/features/{{feature.id}}/scenarios/{{scenario.id}}">
-						{{scenario.title}} <small class="text-muted">
-							<em>completed in {{scenario.duration}} ms</em>
-						</small>
-						<result-badge report-item="scenario"></result-badge>
-					</a>
+                    <span ng-repeat="scenario in feature.scenarios|orderBy:'title'">
+                        <!-- scenario-detail-marker: begin -->
+                        <a class="list-group-item" href="#/features/{{feature.id}}/scenarios/{{scenario.id}}">
+                            {{scenario.title}} <small class="text-muted">
+                                <em>completed in {{scenario.duration}} ms</em>
+                            </small>
+                            <result-badge report-item="scenario"></result-badge>
+                        </a>
+                        <!-- scenario-detail-marker: end -->
+                    </span>
 				</div>
 			</accordion-group>
 		</accordion>
